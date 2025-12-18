@@ -16,7 +16,8 @@ Checks: >-
   -cppcoreguidelines-pro-bounds-constant-array-index,
   -performance-enum-size,
   -misc-non-private-member-variables-in-classes,
-  -misc-include-cleaner
+  -misc-include-cleaner,
+  -cert-err58-cpp
 WarningsAsErrors: '*'
 HeaderFilterRegex: ''
 FormatStyle: 'file'
