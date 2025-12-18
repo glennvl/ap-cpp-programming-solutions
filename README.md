@@ -1,4 +1,4 @@
-# C++ Project Template
+# AP - C/C++ Programming - Exercise Solutions
 
 ## Devcontainer
 
@@ -19,6 +19,30 @@ Basic C and C++ devcontainer with cmake, compiler warnings, clang-tidy and clang
 
 * vscode
 * clion
+
+## How to use?
+
+### vscode
+
+* Configure/build the project using the buttons in the vscode status bar
+* Select the target to run in vscode
+
+```text
+View > Command Palette... > CMake: Set Launch/Debug Target
+```
+
+* Run/Debug the selected target executable using the buttons in the vscode status bar
+
+### Using CLion instead of vscode
+
+1. **Settings > Build, Execution, Deployment > Toolchains**
+   * **CMake**: Change from **Bundled** to **Custom CMake executable** with value **/usr/local/bin/cmake**
+   * **Debugger**: Change from **Bundled GDB** to **Custom LLDB executable** with value **/usr/bin/lldb**
+2. **Settings > Build, Execution, Deployment > CMake**
+   * Delete **Debug** preset
+   * Enable **clang-debug** and **clang-release** presets
+3. **Settings > Build, Execution, Deployment > Dynamic Analysis Tools > Sanitizers**
+   * **LeakSanitizer**: Set **LSAN_OPTIONS** field to **detect_leaks=0** (disables leak detection, required for running with the debugger)
 
 ## Adding libraries and executables
 
@@ -78,14 +102,3 @@ cpprog_add_test(
 
 * Run test from the `Testing` activity in the vscode action bar
 * View test results in the `Test Results` tab in the vscode bottom panel
-
-## Using CLion instead of vscode
-
-1. **Settings > Build, Execution, Deployment > Toolchains**
-   * **CMake**: Change from **Bundled** to **Custom CMake executable** with value **/usr/local/bin/cmake**
-   * **Debugger**: Change from **Bundled GDB** to **Custom LLDB executable** with value **/usr/bin/lldb**
-2. **Settings > Build, Execution, Deployment > CMake**
-   * Delete **Debug** preset
-   * Enable **clang-debug** and **clang-release** presets
-3. **Settings > Build, Execution, Deployment > Dynamic Analysis Tools > Sanitizers**
-   * **LeakSanitizer**: Set **LSAN_OPTIONS** field to **detect_leaks=0** (disables leak detection, required for running with the debugger)
